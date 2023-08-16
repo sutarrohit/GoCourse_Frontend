@@ -65,6 +65,7 @@ const courseDetail = () => {
                   alt="card"
                   width={300}
                   height={300}
+                  unoptimized
                 />
                 <p>Price : {data?.course?.price} | 79% off</p>
                 <p>Instructor : {data?.course?.instructor}</p>

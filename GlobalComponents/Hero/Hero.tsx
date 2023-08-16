@@ -8,7 +8,9 @@ import dynamic from "next/dynamic";
 import illustrationsImg from "../Images/138.svg";
 import Link from "next/link";
 const Hero = () => {
-  const isAuthenticate = useSelector((state: RootState) => state.userAuth.isAuthenticated);
+  const isAuthenticate = useSelector(
+    (state: RootState) => state.userAuth.isAuthenticated
+  );
   const name = useSelector((state: RootState) => state.userAuth.userName);
   return (
     <div className={Style.hero}>
@@ -23,8 +25,9 @@ const Hero = () => {
           </h1>
 
           <p>
-            Discover the power of knowledge with our diverse range of courses designed to transform your skills and open
-            new doors in your journey.
+            Discover the power of knowledge with our diverse range of courses
+            designed to transform your skills and open new doors in your
+            journey.
           </p>
 
           <div className={Style.left_button}>
@@ -45,7 +48,11 @@ const Hero = () => {
 
         {/* Right */}
         <div className={Style.right}>
-          <Image src={illustrationsImg} alt="illustrationsImg" />
+          <Image
+            src={illustrationsImg}
+            alt="illustrationsImg"
+            priority={true}
+          />
         </div>
       </div>
     </div>

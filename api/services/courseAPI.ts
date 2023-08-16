@@ -11,10 +11,6 @@ interface getPurchaseCourseResponse {
   coures: string[];
 }
 
-console.log(
-  "process.env.NEXT_PUBLIC_SERVER_BASE_URL",
-  process.env.NEXT_PUBLIC_SERVER_BASE_URL
-);
 export const courseAPI = createApi({
   reducerPath: "courseAPI",
   baseQuery: fetchBaseQuery({

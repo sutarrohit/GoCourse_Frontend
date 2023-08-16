@@ -12,9 +12,15 @@ import { useGetPurchaseCourseQuery } from "@/api/services/courseAPI";
 
 const CourseCard: React.FC<CourseListProps> = (data) => {
   const router = useRouter();
-  const isAuthenticate = useSelector((state: RootState) => state.userAuth.isAuthenticated);
+  const isAuthenticate = useSelector(
+    (state: RootState) => state.userAuth.isAuthenticated
+  );
 
-  const { data: courseData, error: courseError, isLoading: courseIsLoading } = useGetPurchaseCourseQuery("");
+  const {
+    data: courseData,
+    error: courseError,
+    isLoading: courseIsLoading,
+  } = useGetPurchaseCourseQuery("");
 
   const purchasedCourse = courseData?.coures;
 
@@ -27,7 +33,13 @@ const CourseCard: React.FC<CourseListProps> = (data) => {
           {data?.data?.courses?.map((element, index) => {
             return (
               <div className={Style.cardComponent} key={index}>
-                <Image src={element.image || ""} alt="card" width={300} height={300} />
+                <Image
+                  src={element.image || ""}
+                  alt="card"
+                  width={300}
+                  height={300}
+                  unoptimized
+                />
                 <div className={Style.cardComponent_info}>
                   <h5 className={Style.title}>{element?.title}</h5>
                   <p className={Style.description}> {element?.description}</p>
@@ -37,7 +49,8 @@ const CourseCard: React.FC<CourseListProps> = (data) => {
                   <div className={Style.btnBuy}>
                     {isAuthenticate ? (
                       <>
-                        {purchasedCourse && purchasedCourse?.includes(element._id || "") ? (
+                        {purchasedCourse &&
+                        purchasedCourse?.includes(element._id || "") ? (
                           <>
                             <Link href={`/liveCourse/${element?._id}`}>
                               <button>Resume Learning</button>

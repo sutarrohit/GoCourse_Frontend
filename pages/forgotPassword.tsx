@@ -14,11 +14,16 @@ const forgotPassword = () => {
 
   const router = useRouter();
 
-  const isAuthenticated = useSelector((state: RootState) => state.userAuth.isAuthenticated);
-  const themeMode = useSelector((state: RootState) => state.stateVariable.themeMode);
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.userAuth.isAuthenticated
+  );
+  const themeMode = useSelector(
+    (state: RootState) => state.stateVariable.themeMode
+  );
   if (isAuthenticated) router.push("/");
 
-  const [forgotPassword, { data, error, isLoading }] = useForgotPasswordMutation();
+  const [forgotPassword, { data, error, isLoading }] =
+    useForgotPasswordMutation();
 
   const handleLogin = async () => {
     const response = await forgotPassword({ email });
@@ -42,10 +47,13 @@ const forgotPassword = () => {
         <div className={`${themeMode ? "darkMode" : "lightMode"}`}>
           <Siderbar />
           <Header />
-          <div className={Style.error}>{error && <h5>Error, Please provide correct email.</h5>}</div>
+          <div className={Style.error}>
+            {error && <h5>Error, Please provide correct email.</h5>}
+          </div>
           {data && (
             <h5 className={Style.success}>
-              Password reset link sent to your registered email, Please check your email.
+              Password reset link sent to your registered email, Please check
+              your email.
             </h5>
           )}
           <div className={Style.login}>
@@ -55,13 +63,18 @@ const forgotPassword = () => {
               {/* Left */}
               <div className={Style.left}>
                 <div className={Style.left_image}>
-                  <Image src={Illustrations} alt="Illustrations" />
+                  <Image
+                    src={Illustrations}
+                    alt="Illustrations"
+                    priority={true}
+                  />
                 </div>
 
                 <h1>GoCourse</h1>
                 <p>
-                  Discover the power of knowledge with our diverse range of courses designed to transform your skills
-                  and open new doors in your journey.
+                  Discover the power of knowledge with our diverse range of
+                  courses designed to transform your skills and open new doors
+                  in your journey.
                 </p>
               </div>
               {/* Right */}
@@ -69,12 +82,17 @@ const forgotPassword = () => {
                 <div className={Style.loginCard}>
                   <h1>Forgot Password</h1>
                   <p className={Style.login_info}>
-                    Enter your email and we will send you a link to reset your password
+                    Enter your email and we will send you a link to reset your
+                    password
                   </p>
 
                   <div className={Style.email}>
                     <label htmlFor="email">Email Id</label>
-                    <input type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
 
                   <div className={Style.btnLogin}>

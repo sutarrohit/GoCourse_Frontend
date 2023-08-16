@@ -17,8 +17,12 @@ const login = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const isAuthenticated = useSelector((state: RootState) => state.userAuth.isAuthenticated);
-  const themeMode = useSelector((state: RootState) => state.stateVariable.themeMode);
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.userAuth.isAuthenticated
+  );
+  const themeMode = useSelector(
+    (state: RootState) => state.stateVariable.themeMode
+  );
   if (isAuthenticated) router.push("/");
 
   const [loginUser, { data, error, isLoading }] = useLoginUserMutation();
@@ -44,7 +48,11 @@ const login = () => {
         <div className={`${themeMode ? "darkMode" : "lightMode"}`}>
           <Siderbar />
           <Header />
-          <div className={Style.error}>{error && <h5>Login Error, Please provide correct email and password</h5>}</div>
+          <div className={Style.error}>
+            {error && (
+              <h5>Login Error, Please provide correct email and password</h5>
+            )}
+          </div>
           <div className={Style.login}>
             {isLoading && <Loader />}
 
@@ -52,13 +60,18 @@ const login = () => {
               {/* Left */}
               <div className={Style.left}>
                 <div className={Style.left_image}>
-                  <Image src={Illustrations} alt="Illustrations" />
+                  <Image
+                    src={Illustrations}
+                    alt="Illustrations"
+                    priority={true}
+                  />
                 </div>
 
                 <h1>GoCourse</h1>
                 <p>
-                  Discover the power of knowledge with our diverse range of courses designed to transform your skills
-                  and open new doors in your journey.
+                  Discover the power of knowledge with our diverse range of
+                  courses designed to transform your skills and open new doors
+                  in your journey.
                 </p>
               </div>
               {/* Right */}
@@ -68,7 +81,11 @@ const login = () => {
 
                   <div className={Style.email}>
                     <label htmlFor="email">Email Id</label>
-                    <input type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
 
                   <div className={Style.password}>

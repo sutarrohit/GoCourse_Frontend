@@ -10,8 +10,12 @@ import { RootState } from "@/api/app/store";
 import { Loader, Header, Footer, Siderbar } from "@/GlobalComponents";
 
 const signup = () => {
-  const isAuthenticate = useSelector((state: RootState) => state.userAuth.isAuthenticated);
-  const themeMode = useSelector((state: RootState) => state.stateVariable.themeMode);
+  const isAuthenticate = useSelector(
+    (state: RootState) => state.userAuth.isAuthenticated
+  );
+  const themeMode = useSelector(
+    (state: RootState) => state.stateVariable.themeMode
+  );
   const router = useRouter();
 
   if (isAuthenticate) router.push("/");
@@ -25,7 +29,12 @@ const signup = () => {
   const handleSignup = async () => {
     const name = email.split("@")[0];
 
-    const response = await signupUser({ name, email, password, confirmPassword });
+    const response = await signupUser({
+      name,
+      email,
+      password,
+      confirmPassword,
+    });
     if ("data" in response) {
       const message = response.data.message;
       if (message) {
@@ -45,11 +54,13 @@ const signup = () => {
           <Siderbar />
           <Header />
           <div className={Style.error}>
-            {error && <h5>Signup Error, Please provide correct email and password</h5>}
+            {error && (
+              <h5>Signup Error, Please provide correct email and password</h5>
+            )}
             {data && (
               <h5 className={Style.success}>
-                Registration completed successfully, a verification email has been dispatched to your registered email
-                address.
+                Registration completed successfully, a verification email has
+                been dispatched to your registered email address.
               </h5>
             )}
           </div>
@@ -59,12 +70,17 @@ const signup = () => {
               {/* Left */}
               <div className={Style.left}>
                 <div className={Style.left_image}>
-                  <Image src={Illustrations} alt="Illustrations" />
+                  <Image
+                    src={Illustrations}
+                    alt="Illustrations"
+                    priority={true}
+                  />
                 </div>
                 <h1>GoCourse</h1>
                 <p>
-                  Discover the power of knowledge with our diverse range of courses designed to transform your skills
-                  and open new doors in your journey.
+                  Discover the power of knowledge with our diverse range of
+                  courses designed to transform your skills and open new doors
+                  in your journey.
                 </p>
               </div>
               {/* Right */}
@@ -74,7 +90,11 @@ const signup = () => {
 
                   <div className={Style.email}>
                     <label htmlFor="email">Email Id</label>
-                    <input type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
 
                   <div className={Style.password}>
