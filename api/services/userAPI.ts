@@ -1,6 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { SerializedError } from "@reduxjs/toolkit";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 interface LoginUserData {
   email: string;
   password: string;
@@ -51,7 +54,7 @@ interface resetPasswordResponse {
 export const userAPI = createApi({
   reducerPath: "userAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://go-course-backend.vercel.app",
+    baseUrl: process.env.NEXT_PUBLIC_SERVER_BASE_URL,
   }),
   endpoints: (builder) => ({
     // User login route

@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Icourse, IcourseData, IcourseDataOne } from "@/Interfaces/Interfaces";
+import dotenv from "dotenv";
+dotenv.config();
 
 interface buyCourseResponse {
   paymentUrl: string;
@@ -10,13 +12,13 @@ interface getPurchaseCourseResponse {
 }
 
 console.log(
-  "rocess.env.NEXT_PUBLIC_SERVER_BASE_URL",
+  "process.env.NEXT_PUBLIC_SERVER_BASE_URL",
   process.env.NEXT_PUBLIC_SERVER_BASE_URL
 );
 export const courseAPI = createApi({
   reducerPath: "courseAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://go-course-backend.vercel.app",
+    baseUrl: process.env.NEXT_PUBLIC_SERVER_BASE_URL,
 
     prepareHeaders: (headers) => {
       let token: string | null = "";
