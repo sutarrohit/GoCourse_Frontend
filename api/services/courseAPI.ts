@@ -9,14 +9,19 @@ interface getPurchaseCourseResponse {
   coures: string[];
 }
 
+console.log(
+  "rocess.env.NEXT_PUBLIC_SERVER_BASE_URL",
+  process.env.NEXT_PUBLIC_SERVER_BASE_URL
+);
 export const courseAPI = createApi({
   reducerPath: "courseAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.NEXT_PUBLIC_SERVER_BASE_URL,
+    baseUrl: "https://go-course-backend.vercel.app",
 
     prepareHeaders: (headers) => {
       let token: string | null = "";
-      if (typeof window !== "undefined") token = localStorage.getItem("authToken");
+      if (typeof window !== "undefined")
+        token = localStorage.getItem("authToken");
       if (token) headers.set("Authorization", `Bearer ${token}`);
       return headers;
     },
@@ -25,13 +30,13 @@ export const courseAPI = createApi({
   // Get courses
   endpoints: (builder) => ({
     getCourseData: builder.query<IcourseData, string>({
-      query: () => "/course/courses",
+      query: () => "/api/v1/course/courses",
     }),
 
     // Get One course
     getOneCourse: builder.mutation<IcourseDataOne, string>({
       query: (userData) => ({
-        url: `/course/course/${userData}`,
+        url: `/api/v1/course/course/${userData}`,
         method: "GET",
       }),
     }),
@@ -39,7 +44,7 @@ export const courseAPI = createApi({
     // Buy course
     buyCourse: builder.mutation<buyCourseResponse, string | undefined>({
       query: (userData) => ({
-        url: "/payment/create-checkout-session",
+        url: "/api/v1/payment/create-checkout-session",
         method: "POST",
         body: { userData },
       }),
@@ -48,7 +53,7 @@ export const courseAPI = createApi({
     // Create Course
     createCourse: builder.mutation<Icourse, Icourse>({
       query: (useData) => ({
-        url: "/course/createCourse",
+        url: "/api/v1/course/createCourse",
         method: "POST",
         body: useData,
       }),
@@ -56,20 +61,20 @@ export const courseAPI = createApi({
 
     // Brought Courses
     broughtCourses: builder.query<IcourseData, string>({
-      query: () => "/course/broughtCourses",
+      query: () => "/api/v1/course/broughtCourses",
     }),
 
     // Purchease course
     purchaseCourse: builder.mutation<IcourseDataOne, string>({
       query: (userData) => ({
-        url: `/course/purcheaseCourse/${userData}`,
+        url: `/api/v1/course/purcheaseCourse/${userData}`,
         method: "POST",
       }),
     }),
 
     // Get purchase courses
     getPurchaseCourse: builder.query<getPurchaseCourseResponse, string>({
-      query: () => "/course/getPurcheaseCourse",
+      query: () => "/api/v1/course/getPurcheaseCourse",
     }),
   }),
 });

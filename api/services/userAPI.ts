@@ -50,12 +50,14 @@ interface resetPasswordResponse {
 
 export const userAPI = createApi({
   reducerPath: "userAPI",
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_SERVER_BASE_URL }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://go-course-backend.vercel.app",
+  }),
   endpoints: (builder) => ({
     // User login route
     loginUser: builder.mutation<LoginResponse, LoginUserData>({
       query: (userData) => ({
-        url: "/user/login",
+        url: "/api/v1/user/login",
         method: "POST",
         body: userData,
       }),
@@ -64,7 +66,7 @@ export const userAPI = createApi({
     // User singup route
     signupUser: builder.mutation<signupResponse, SingupUserData>({
       query: (userData) => ({
-        url: "/user/signup",
+        url: "/api/v1/user/signup",
         method: "POST",
         body: userData,
       }),
@@ -73,15 +75,18 @@ export const userAPI = createApi({
     // Signup verification route
     signupVerification: builder.mutation<verificationResponse, string>({
       query: (userData) => ({
-        url: `/user/userVerification/${userData}`,
+        url: `/api/v1/user/userVerification/${userData}`,
         method: "PATCH",
       }),
     }),
 
     // Forget password
-    forgotPassword: builder.mutation<forgortPasswordResponse, forgortPasswordData>({
+    forgotPassword: builder.mutation<
+      forgortPasswordResponse,
+      forgortPasswordData
+    >({
       query: (userData) => ({
-        url: "/user/forgotPassword",
+        url: "/api/v1/user/forgotPassword",
         method: "POST",
         body: userData,
       }),
@@ -90,7 +95,7 @@ export const userAPI = createApi({
     // Reset Password
     resetPassword: builder.mutation<resetPasswordResponse, resetPasswordData>({
       query: (userData) => ({
-        url: `/user/resetPassword/${userData.token}`,
+        url: `/api/v1/user/resetPassword/${userData.token}`,
         method: "PATCH",
         body: userData,
       }),
