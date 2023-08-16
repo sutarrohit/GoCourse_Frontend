@@ -1,0 +1,49 @@
+# Next.js
+node_modules/
+.next/
+out/
+.cache/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE specific
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Compiled output
+*.js
+*.map
+*.d.ts
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Miscellaneous
+*.swp
+*~

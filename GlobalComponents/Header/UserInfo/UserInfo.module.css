@@ -1,0 +1,44 @@
+.userInfo {
+  position: absolute;
+  top: 2.5rem;
+  right: -1rem;
+  background-color: var(--button-color);
+  color: white;
+  width: 13rem;
+  border-radius: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0 0.7rem 0;
+}
+
+.avatar p {
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.avatar button {
+  font-size: 1rem;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 1rem 0;
+  margin-bottom: 0.8rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.avatar span {
+  font-weight: 900;
+  font-size: 1.1rem;
+}

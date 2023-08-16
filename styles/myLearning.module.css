@@ -1,0 +1,15 @@
+.mylearning {
+  min-height: 89vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  margin-top: 2rem;
+}
+
+.heading h1 {
+  text-align: center;
+}

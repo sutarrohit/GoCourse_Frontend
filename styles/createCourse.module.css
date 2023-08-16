@@ -1,0 +1,84 @@
+.CreateCourse {
+  min-height: 89vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+.notification h4 {
+  text-align: center;
+  color: var(--button-color);
+}
+
+.notification h5 {
+  text-align: center;
+  color: red;
+}
+.CreateCourse_holder {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.7rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+}
+
+.CreateCourse button {
+  background-color: var(--button-color);
+  color: white;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.CreateCourse_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 0.7rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content label {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.content textarea {
+  border: 2px solid var(--button-color);
+  border-radius: 0.3rem;
+  height: 7rem;
+}
+.content input {
+  border: 2px solid var(--button-color);
+  border-radius: 0.3rem;
+  padding: 1.2rem;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  .CreateCourse {
+    min-height: 125vh;
+  }
+  .CreateCourse_container {
+    grid-template-columns: 1fr;
+  }
+  .CreateCourse_holder {
+    width: 97%;
+    margin-top: 3.2rem;
+  }
+}

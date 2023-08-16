@@ -1,0 +1,7 @@
+.sliderMenuOpen {
+  border: 2px solid green;
+}
+
+.sliderMenuClose {
+  border: 2px solid yellow;
+}

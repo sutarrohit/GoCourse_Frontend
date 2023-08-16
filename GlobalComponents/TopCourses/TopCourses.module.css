@@ -1,0 +1,15 @@
+.TopCourses h1 {
+  text-align: center;
+}
+
+.notification {
+  text-align: center;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notification h4 {
+  color: red;
+}

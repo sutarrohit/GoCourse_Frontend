@@ -1,0 +1,120 @@
+.hero {
+  height: 89vh;
+  display: flex;
+  justify-content: center;
+}
+
+.hero_container {
+  width: 97%;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  align-items: center;
+}
+
+/* Left section*/
+.left span {
+  color: var(--button-color);
+}
+
+.left h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+}
+
+.left p {
+  margin-top: 1.7rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1.7em;
+  line-height: 1.5em;
+}
+
+.left {
+  margin-left: 2rem;
+}
+
+/* Button */
+.left_button {
+  display: flex;
+  gap: 1rem;
+}
+.left_button button {
+  display: flex;
+  width: 8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  padding: 1.1rem 1.5rem;
+  background-color: var(--button-color);
+  font-weight: 700;
+  color: white;
+}
+
+/* right section */
+.right {
+  width: 100%;
+}
+
+.right img {
+  width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .hero_container {
+    grid-template-columns: 1fr;
+  }
+
+  .left h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    display: inline;
+  }
+
+  .left {
+    margin-top: 2rem;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left p {
+    text-align: center;
+  }
+
+  .right img {
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .right img {
+    width: 80%;
+    height: 100%;
+  }
+
+  .left p {
+    width: 80%;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .left h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  .left p {
+    text-align: left;
+  }
+}

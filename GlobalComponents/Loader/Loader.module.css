@@ -1,0 +1,28 @@
+.loader {
+  width: 25rem;
+  min-height: 12rem;
+  position: absolute;
+  z-index: 2;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader_container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  .loader {
+    width: 20rem;
+    min-height: 14rem;
+  }
+}

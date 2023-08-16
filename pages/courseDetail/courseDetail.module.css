@@ -1,0 +1,180 @@
+.courseDetail {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+
+.courseDetail_container {
+  width: 97%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+/* Left */
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoCard {
+  width: 65%;
+  min-height: 25rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.infoCard img {
+  width: 100%;
+  height: auto;
+}
+
+.infoCard p {
+  text-align: center;
+  font-weight: 500;
+}
+
+.infoCard button {
+  width: 75%;
+  background: var(--button-color);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1.32rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right */
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.courseInfo {
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.courseInfo h1 {
+  font-weight: 900;
+  font-size: 1.7rem;
+}
+
+.courseInfo h3 {
+  font-size: 1rem;
+  margin: 0.9rem 0;
+  font-weight: 300;
+}
+
+.courseInfo h4 {
+  margin-top: 1rem;
+}
+
+.courseInfo p {
+  margin-top: 0.5rem;
+}
+.courseMetadata {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.courseMetadata {
+  margin-top: 0rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 360px) {
+  .courseMetadata {
+    grid-template-columns: 1fr;
+  }
+
+  .courseInfo {
+    padding: 0rem;
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .courseDetail {
+    min-height: 170vh;
+  }
+  .courseDetail_container {
+    grid-template-columns: 1fr;
+  }
+
+  .infoCard {
+    width: 90%;
+  }
+
+  .courseInfo {
+    width: 95%;
+    padding-left: 1rem;
+    padding: 2.5rem 0.5rem;
+    border-radius: 0.7rem;
+  }
+
+  .courseInfo h1 {
+    font-weight: 900;
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 749px) {
+  .courseDetail_container {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .courseInfo {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .infoCard {
+    width: 100%;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 849px) {
+  .infoCard {
+    width: 90%;
+  }
+
+  .courseInfo {
+    width: 95%;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1000px) {
+  .infoCard {
+    width: 80%;
+  }
+
+  .courseInfo {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1200px) {
+  .courseDetail_container {
+    grid-template-columns: 1fr 2fr;
+  }
+  .infoCard {
+    width: 75%;
+  }
+}

@@ -1,0 +1,108 @@
+.courseCard {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.courseCard_container {
+  margin-top: 1rem;
+  width: 97%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Card Component */
+.card {
+  width: 90%;
+  min-height: 30rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.cardComponent {
+  box-shadow: var(--boxShadow);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 16px;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.cardComponent:hover {
+  transform: scale(1.05);
+}
+
+.cardComponent img {
+  width: 100%;
+  height: auto;
+}
+
+.cardComponent h5 {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description {
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  padding: 0 0.2rem;
+}
+
+.star {
+  text-align: center;
+}
+
+/* Buy course btn */
+.btnBuy {
+  margin: 0.5rem 0 1.2rem 0;
+}
+.btnBuy button {
+  margin: 0 auto;
+  background-color: var(--button-color);
+  color: white;
+  border-radius: 0.5rem;
+  width: 80%;
+  padding: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+/* Media Queries */
+@media (max-width: 650px) {
+  .card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 651px) and (max-width: 1000px) {
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1200px) {
+  .card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
