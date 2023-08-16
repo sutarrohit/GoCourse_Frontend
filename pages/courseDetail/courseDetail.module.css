@@ -109,11 +109,10 @@
 }
 
 @media (max-width: 600px) {
-  .courseDetail {
-    min-height: 140vh;
-  }
   .courseDetail_container {
     grid-template-columns: 1fr;
+    margin: 2rem 0;
+    gap: 2rem;
   }
 
   .infoCard {
