@@ -10,6 +10,9 @@
 
 .sidebar_container {
   height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: #382f63;
 }
 
 .sidebar_toggle {
