@@ -12,8 +12,12 @@ import { useRouter } from "next/router";
 
 const Siderbar = () => {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector((state: RootState) => state.userAuth.isAuthenticated);
-  const openSiderbarMenu = useSelector((state: RootState) => state.stateVariable.openSiderbarMenu);
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.userAuth.isAuthenticated
+  );
+  const openSiderbarMenu = useSelector(
+    (state: RootState) => state.stateVariable.openSiderbarMenu
+  );
 
   const router = useRouter();
   const userLogout = () => {
@@ -26,7 +30,9 @@ const Siderbar = () => {
   return (
     <div
       className={
-        openSiderbarMenu ? `${Style.sidebar} ${Style.sliderMenuOpen}` : `${Style.sidebar} ${Style.sliderMenuClose} `
+        openSiderbarMenu
+          ? `${Style.sidebar} ${Style.sliderMenuOpen}`
+          : `${Style.sidebar} ${Style.sliderMenuClose} `
       }
     >
       <div className={Style.sidebar_container}>
@@ -41,30 +47,37 @@ const Siderbar = () => {
           <Link href={"/"}>About</Link>
         </div>
 
-        <div
-          className={Style.cart}
-          onClick={() => {
-            return handleMyLearning(), dispatch(changeOpenSiderbarMenu());
-          }}
-        >
-          <BsCartCheck />
-        </div>
-
         <div className={Style.sidebar_button}>
           {isAuthenticated ? (
-            <button
-              onClick={() => {
-                return userLogout(), dispatch(changeOpenSiderbarMenu());
-              }}
-            >
-              Log out
-            </button>
+            <>
+              <div
+                className={Style.cart}
+                onClick={() => {
+                  return handleMyLearning(), dispatch(changeOpenSiderbarMenu());
+                }}
+              >
+                <BsCartCheck />
+              </div>
+              <button
+                onClick={() => {
+                  return userLogout(), dispatch(changeOpenSiderbarMenu());
+                }}
+              >
+                Log out
+              </button>
+            </>
           ) : (
             <>
-              <Link href={"/login"} onClick={() => dispatch(changeOpenSiderbarMenu())}>
+              <Link
+                href={"/login"}
+                onClick={() => dispatch(changeOpenSiderbarMenu())}
+              >
                 Log in
               </Link>
-              <Link href={"/signup"} onClick={() => dispatch(changeOpenSiderbarMenu())}>
+              <Link
+                href={"/signup"}
+                onClick={() => dispatch(changeOpenSiderbarMenu())}
+              >
                 Sign up
               </Link>
             </>

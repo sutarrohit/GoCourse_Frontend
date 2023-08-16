@@ -110,7 +110,7 @@
 
 @media (max-width: 600px) {
   .courseDetail {
-    min-height: 170vh;
+    min-height: 140vh;
   }
   .courseDetail_container {
     grid-template-columns: 1fr;
