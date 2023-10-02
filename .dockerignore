@@ -1,0 +1,35 @@
+# Ignore node_modules unless we are building inside a Node.js image
+**/node_modules
+!**/node_modules/@your_organization/*
+
+# Ignore the .next directory as it contains build files
+.next
+
+# Ignore any build artifacts
+out
+.DS_Store
+
+# Ignore npm's cache folder
+.npm
+
+# Ignore the .git directory
+.git
+
+# Ignore any local environment files (e.g., .env.local)
+.env.local
+
+# Ignore any development specific files or folders
+.vscode
+*.log
+
+# Ignore package manager lock files
+yarn.lock
+package-lock.json
+
+# Ignore Docker-specific files
+Dockerfile
+.dockerignore
+
+# Ignore any IDE specific files or folders
+.idea
+*.iml

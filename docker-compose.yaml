@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  course_frontend:
+    image: (IMAGE_NAME):lates
+    ports:
+      - 3000:3000
+    environment:
+      NEXT_PUBLIC_SERVER_BASE_URL:
