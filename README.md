@@ -1,9 +1,16 @@
 # GoCourse - Online Course Selling Platform
 
+
+
+
+
 - GoCourse is a modern and feature-rich online platform designed for selling and purchasing courses. </br>
 - This repository contains the source code for GoCourse, which is built using Next.js, Express.js, MongoDB, TypeScript, Redux Toolkit, and Stripe payment gateway.
 
 ![GoCourse Preview](https://courseselling28.s3.eu-north-1.amazonaws.com/Screenshot+2023-08-18+091042.png)
+
+![GoCourse Logo](https://go-course-frontend.vercel.app/_next/static/media/138.7c38a751.svg)
+
 
 ## Features
 
